@@ -1,0 +1,23 @@
+{
+  "name": "aula-api",
+  "version": "1.0.0",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js",
+    "dev": "nodemon --exec node api.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "multer": "^2.0.1",
+    "mysql2": "^3.11.5",
+    "nodemon": "^3.1.7",
+    "path": "^0.12.7"
+  }
+}

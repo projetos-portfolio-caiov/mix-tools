@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstracao</title>
+</head>
+<body onload="carregarInfo()">
+    <input type="text" placeholder="Maquina" id="idMaquina">
+    <input type="date" placeholder="Dia" id="dia">
+    <input type="time" placeholder="De" id="inicio">
+    <input type="time" placeholder="Ate" id="fim">
+    <select id="slt_velocidade">
+        <option value="0.5x">0.5x</option>
+        <option value="1x">1x</option>
+        <option value="2x">2x</option>
+    </select>
+    <select id="slt_comp">
+        <option value="CPUP">Porcentagem CPU</option>
+        <option value="RAMP">Porcentagem RAM</option>
+    </select>
+    <button onclick="carregarGrafico()">Criar</button>
+    <img id="grafico" src="" alt="" style="display: none;">
+</body>
+</html>
+
+<script>
+    function carregarGrafico() {
+        let id = document.getElementById("idMaquina").value;
+        let dia = document.getElementById("dia").value;
+        let de = document.getElementById("inicio").value;
+        let ate = document.getElementById("fim").value;
+        let vel = document.getElementById("slt_velocidade").value;
+        let comp = document.getElementById("slt_comp").value;
+        let idUsuario = sessionStorage.ID_USUARIO;
+
+        const img = document.getElementById('grafico');
+        img.style.display = "flex"
+        atualizarImagem()
+
+        fetch("http://localhost:5000/recebimento", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idMaquina: id,
+                data: dia,
+                inicio: de,
+                fim: ate,
+                velocidade: vel,
+                componente: comp,
+                usuario: idUsuario 
+            })
+        }).then((resultado) => {
+            console.log(resultado);
+        })
+    }
+
+    const atualizarImagem = () => {
+        const img = document.getElementById('grafico');
+        const timestamp = new Date().getTime();
+        let idUsuario = sessionStorage.ID_USUARIO;
+        console.log(idUsuario)
+        img.src = `/uploads/grafico${idUsuario}.png?t=` + timestamp;
+    }
+
+    function carregarInfo() {
+        setInterval(atualizarImagem, 1000);
+    }
+
+</script>
