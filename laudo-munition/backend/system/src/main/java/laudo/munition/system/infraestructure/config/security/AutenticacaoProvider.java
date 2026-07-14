@@ -24,11 +24,29 @@ public class AutenticacaoProvider implements AuthenticationProvider {
 
         UserDetails userDetails = this.usuarioAutorizacaoService.loadUserByUsername(username);
 
-        if(this.passwordEncoder.matches(password, userDetails.getPassword())){
+        System.out.println("Username: " + username);
+        System.out.println("Senha digitada: " + password);
+        System.out.println("Senha banco: " + userDetails.getPassword());
+
+        boolean matches = passwordEncoder.matches(password, userDetails.getPassword());
+
+        System.out.println("Matches: " + matches);
+
+        if (matches) {
+            return new UsernamePasswordAuthenticationToken(
+                    userDetails,
+                    null,
+                    userDetails.getAuthorities()
+            );
+        }
+
+        throw new BadCredentialsException("Usuário ou Senha inválidos");
+
+        /*if(this.passwordEncoder.matches(password, userDetails.getPassword())){
             return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
         } else{
             throw new BadCredentialsException("Usuário ou Senha inválidos");
-        }
+        }*/
     }
 
     @Override

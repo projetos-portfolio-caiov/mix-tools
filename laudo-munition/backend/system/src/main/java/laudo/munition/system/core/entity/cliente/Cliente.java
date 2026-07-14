@@ -1,9 +1,10 @@
 package laudo.munition.system.core.entity.cliente;
 
 import laudo.munition.system.core.entity.cliente.valueObjects.*;
-import laudo.munition.system.core.entity.generalValueObjects.EstandeId;
-import laudo.munition.system.core.entity.generalValueObjects.Nome;
-import laudo.munition.system.core.entity.generalValueObjects.Telefone;
+import laudo.munition.system.core.entity.shared.EnderecoId;
+import laudo.munition.system.core.entity.shared.EstandeId;
+import laudo.munition.system.core.entity.shared.Nome;
+import laudo.munition.system.core.entity.shared.Telefone;
 
 public class Cliente {
 

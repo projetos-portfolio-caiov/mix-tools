@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
-import laudo.munition.system.core.entity.cliente.Cliente;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -49,5 +48,8 @@ public class EnderecoJpa {
     public Integer numero;
 
     @OneToMany(mappedBy = "endereco")
-    public List<Cliente> cliente;
+    public List<ClienteJpa> cliente;
+
+    @OneToMany(mappedBy = "endereco")
+    public List<EstandeJpa> estande;
 }

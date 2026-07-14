@@ -1,18 +1,17 @@
-package laudo.munition.system.core.entity.generalValueObjects;
+package laudo.munition.system.core.entity.arma.valueObjects;
 
-public class Nome {
-
+public class Imagem {
     private String value;
 
-    private Nome(String value) {
+    private Imagem(String value) {
         this.value = value;
     }
 
-    public static Nome build(String value) {
+    public static Imagem build(String value) {
         if (value == null || value.isBlank()) {
             return null;
         }
-        return new Nome(value);
+        return new Imagem(value);
     }
 
     public String getValue() {
@@ -21,6 +20,6 @@ public class Nome {
 
     @Override
     public String toString() {
-        return "Nome{value='" + value + "'}";
+        return "Imagem{value='" + value + "'}";
     }
 }

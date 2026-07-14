@@ -1,8 +1,10 @@
 package laudo.munition.system.core.entity.estande;
 
-import laudo.munition.system.core.entity.generalValueObjects.Email;
-import laudo.munition.system.core.entity.generalValueObjects.Nome;
-import laudo.munition.system.core.entity.generalValueObjects.Telefone;
+import laudo.munition.system.core.entity.estande.valueObjects.Presidente;
+import laudo.munition.system.core.entity.shared.Email;
+import laudo.munition.system.core.entity.shared.EnderecoId;
+import laudo.munition.system.core.entity.shared.Nome;
+import laudo.munition.system.core.entity.shared.Telefone;
 
 public class Estande {
 
@@ -10,30 +12,40 @@ public class Estande {
     private Nome nome;
     private Email email;
     private Telefone telefone;
+    private Presidente presidente;
+    private EnderecoId enderecoId;
 
     public Estande(
             Integer id,
             Nome nome,
             Email email,
-            Telefone telefone
+            Telefone telefone,
+            Presidente presidente,
+            EnderecoId enderecoId
     ) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
+        this.presidente = presidente;
+        this.enderecoId = enderecoId;
     }
 
     public static Estande build(
             Integer id,
             String nome,
             String email,
-            String telefone
+            String telefone,
+            String presidente,
+            Integer enderecoId
     ) {
         return new Estande(
                 id,
                 Nome.build(nome),
                 Email.build(email),
-                Telefone.build(telefone)
+                Telefone.build(telefone),
+                Presidente.build(presidente),
+                EnderecoId.build(enderecoId)
         );
     }
 
@@ -59,5 +71,14 @@ public class Estande {
 
     public Telefone getTelefone() {
         return this.telefone;
+    }
+
+
+    public Presidente getPresidente() {
+        return this.presidente;
+    }
+
+    public EnderecoId getEnderecoId() {
+        return this.enderecoId;
     }
 }

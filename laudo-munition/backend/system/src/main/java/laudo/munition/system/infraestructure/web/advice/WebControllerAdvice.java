@@ -1,5 +1,8 @@
 package laudo.munition.system.infraestructure.web.advice;
 
+import laudo.munition.system.core.exception.DadoNaoEncontradoException;
+import laudo.munition.system.core.exception.DadosMalFormatados;
+import laudo.munition.system.core.exception.ErroInternoException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

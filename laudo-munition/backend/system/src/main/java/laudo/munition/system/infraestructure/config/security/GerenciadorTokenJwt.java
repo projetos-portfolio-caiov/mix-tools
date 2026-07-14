@@ -4,10 +4,13 @@ package laudo.munition.system.infraestructure.config.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import laudo.munition.system.application.port.TokenProvider;
+import laudo.munition.system.core.entity.usuario.Usuario;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
@@ -15,7 +18,8 @@ import java.util.Date;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class GerenciadorTokenJwt {
+@Component
+public class GerenciadorTokenJwt implements TokenProvider {
 
     @Value("${jwt.secret}")
     private String secret;
@@ -23,7 +27,8 @@ public class GerenciadorTokenJwt {
     @Value("${jwt.validity}")
     private long jwtTokenValidity;
 
-    public String getUsernameFromToken(String token) {
+    @Override
+    public String obterLogin(String token){
         return getClaimForToken(token, Claims::getSubject);
     }
 
@@ -31,16 +36,21 @@ public class GerenciadorTokenJwt {
         return getClaimForToken(token, Claims::getExpiration);
     }
 
-    public String generateToken(final Authentication authentication) {
-        final String authorities = authentication.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.joining(","));
+    @Override
+    public boolean validar(String token) {
+        return false;
+    }
+
+    @Override
+    public String gerarToken(Usuario usuario) {
 
         return Jwts.builder()
-                .setSubject(authentication.getName())
+                .setSubject(usuario.getEmail().getValue())
                 .signWith(parseSecret())
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + jwtTokenValidity * 1_000))
+                .setIssuedAt(new Date())
+                .setExpiration(
+                        new Date(System.currentTimeMillis()
+                                + jwtTokenValidity * 1000))
                 .compact();
     }
 
@@ -50,7 +60,7 @@ public class GerenciadorTokenJwt {
     }
 
     public boolean validateToken(String token, UserDetails userDetails){
-        String username = getUsernameFromToken(token);
+        String username = obterLogin(token);
         return (username.equals(userDetails.getUsername())&& !isTokenExpired(token));
     }
 
@@ -69,6 +79,5 @@ public class GerenciadorTokenJwt {
     private SecretKey parseSecret(){
         return Keys.hmacShaKeyFor(this.secret.getBytes(StandardCharsets.UTF_8));
     }
-
 }
 

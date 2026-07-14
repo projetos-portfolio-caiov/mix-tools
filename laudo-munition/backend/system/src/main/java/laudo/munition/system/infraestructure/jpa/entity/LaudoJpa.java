@@ -1,9 +1,7 @@
 package laudo.munition.system.infraestructure.jpa.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import laudo.munition.system.core.entity.cliente.Cliente;
 import laudo.munition.system.core.entity.usuario.Usuario;
 import lombok.Getter;
@@ -24,21 +22,29 @@ public class LaudoJpa {
     private Integer id;
 
     @NotNull
-    @OneToMany
-    private Set<Cliente> clientes;
+    @ManyToOne
+    private ClienteJpa cliente;
 
     @NotNull
-    @OneToMany
-    private Set<Usuario> usuarios;
+    @ManyToOne
+    private EstandeJpa estande;
 
     @DateTimeFormat
     public LocalDateTime dtHora;
 
-    @NotBlank
-    @Size(min = 0, max = 45)
-    private String finalidade;
+    @NotNull
+    @Min(value = -1)
+    @Max(value = 2)
+    private Integer aprovado;
 
-    @NotBlank
-    @Size(min = 0, max = 45)
-    private String arma;
+    @Size(min = 0, max = 270)
+    private String observacoes;
+
+    @NotNull
+    @Positive
+    private Integer fundamentacaoId;
+
+    @NotNull
+    @Positive
+    private Integer armaId;
 }

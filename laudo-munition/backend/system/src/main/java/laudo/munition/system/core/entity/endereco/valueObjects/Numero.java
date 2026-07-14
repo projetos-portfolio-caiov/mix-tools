@@ -1,5 +1,7 @@
 package laudo.munition.system.core.entity.endereco.valueObjects;
 
+import laudo.munition.system.core.exception.DadosMalFormatados;
+
 public class Numero {
 
     private Integer value;

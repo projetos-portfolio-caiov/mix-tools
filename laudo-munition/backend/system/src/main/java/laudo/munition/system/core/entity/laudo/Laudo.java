@@ -1,48 +1,58 @@
 package laudo.munition.system.core.entity.laudo;
 
-import laudo.munition.system.core.entity.generalValueObjects.Email;
+import laudo.munition.system.core.entity.shared.EstandeId;
 import laudo.munition.system.core.entity.laudo.valueObjects.*;
 
 public class Laudo {
 
     private Integer id;
     private ClienteId clienteId;
-    private UsuarioId usuarioId;
+    private EstandeId estandeId;
     private DtHora dtHora;
-    private Finalidade finalidade;
-    private Arma arma;
+    private Observacoes observacoes;
+    private Integer fundamentacaoId;
+    private Integer armaId;
+    private Aprovado aprovado;
 
     public Laudo(
             Integer id,
             ClienteId clienteId,
-            UsuarioId usuarioId,
+            EstandeId estandeId,
             DtHora dtHora,
-            Finalidade finalidade,
-            Arma arma
+            Observacoes observacoes,
+            Integer fundamentacaoId,
+            Integer armaId,
+            Aprovado aprovado
     ) {
         this.id = id;
         this.clienteId = clienteId;
-        this.usuarioId = usuarioId;
+        this.estandeId = estandeId;
         this.dtHora = dtHora;
-        this.finalidade = finalidade;
-        this.arma = arma;
+        this.observacoes = observacoes;
+        this.fundamentacaoId = fundamentacaoId;
+        this.armaId = armaId;
+        this.aprovado = aprovado;
     }
 
     public static Laudo build(
             Integer id,
             Integer clienteId,
-            Integer usuarioId,
+            Integer estandeId,
             String dtHora,
-            String finalidade,
-            String arma
+            String observacoes,
+            Integer fundamentacaoId,
+            Integer armaId,
+            Integer aprovado
     ) {
         return new Laudo(
                 id,
                 ClienteId.build(clienteId),
-                UsuarioId.build(usuarioId),
+                EstandeId.build(estandeId),
                 DtHora.build(dtHora),
-                Finalidade.build(finalidade),
-                Arma.build(arma)
+                Observacoes.build(observacoes),
+                fundamentacaoId,
+                armaId,
+                Aprovado.build(aprovado)
         );
     }
 
@@ -66,12 +76,12 @@ public class Laudo {
         this.clienteId = clienteId;
     }
 
-    public UsuarioId getUsuarioId() {
-        return usuarioId;
+    public EstandeId getEstandeId() {
+        return estandeId;
     }
 
-    public void setUsuarioId(UsuarioId usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setEstandeId(EstandeId estandeId) {
+        this.estandeId = estandeId;
     }
 
     public DtHora getDtHora() {
@@ -82,20 +92,36 @@ public class Laudo {
         this.dtHora = dtHora;
     }
 
-    public Finalidade getFinalidade() {
-        return finalidade;
+    public Observacoes getObservacoes() {
+        return observacoes;
     }
 
-    public void setFinalidade(Finalidade finalidade) {
-        this.finalidade = finalidade;
+    public void setObservacoes(Observacoes observacoes) {
+        this.observacoes = observacoes;
     }
 
-    public Arma getArma() {
-        return arma;
+    public Integer getFundamentacaoId() {
+        return fundamentacaoId;
     }
 
-    public void setArma(Arma arma) {
-        this.arma = arma;
+    public void setFundamentacaoId(Integer fundamentacaoId) {
+        this.fundamentacaoId = fundamentacaoId;
+    }
+
+    public Integer getArmaId() {
+        return armaId;
+    }
+
+    public void setArmaId(Integer armaId) {
+        this.armaId = armaId;
+    }
+
+    public Aprovado getAprovado() {
+        return aprovado;
+    }
+
+    public void setAprovado(Aprovado aprovado) {
+        this.aprovado = aprovado;
     }
 
 }

@@ -1,20 +1,18 @@
 package laudo.munition.system.core.entity.laudo.valueObjects;
 
-import laudo.munition.system.core.entity.generalValueObjects.Nome;
-
-public class Arma {
+public class Observacoes {
 
     private String value;
 
-    private Arma(String value) {
+    private Observacoes(String value) {
         this.value = value;
     }
 
-    public static Arma build(String value) {
+    public static Observacoes build(String value) {
         if (value == null || value.isBlank()) {
             return null;
         }
-        return new Arma(value);
+        return new Observacoes(value);
     }
 
     public String getValue() {
@@ -23,6 +21,6 @@ public class Arma {
 
     @Override
     public String toString() {
-        return "Arma{value='" + value + "'}";
+        return "Observacoes{value='" + value + "'}";
     }
 }

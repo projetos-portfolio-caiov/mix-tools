@@ -1,12 +1,11 @@
 package laudo.munition.system.core.entity.usuario;
 
-import laudo.munition.system.core.entity.generalValueObjects.EstandeId;
-import laudo.munition.system.core.entity.generalValueObjects.Email;
-import laudo.munition.system.core.entity.generalValueObjects.Nome;
+import laudo.munition.system.core.entity.shared.EstandeId;
+import laudo.munition.system.core.entity.shared.Email;
+import laudo.munition.system.core.entity.shared.Nome;
 import laudo.munition.system.core.entity.usuario.valueObjects.Cargo;
 import laudo.munition.system.core.entity.usuario.valueObjects.Senha;
 import laudo.munition.system.core.entity.usuario.valueObjects.Token;
-
 public class Usuario {
 
     private Integer id;
@@ -33,6 +32,9 @@ public class Usuario {
         this.estandeId = estandeId;
     }
 
+    public Usuario() {
+    }
+
     public static Usuario build(
             Integer id,
             String email,
@@ -49,6 +51,16 @@ public class Usuario {
                 Cargo.build(cargo),
                 EstandeId.build(estandeId)
         );
+    }
+
+    public static Usuario buildlogin(
+            String email,
+            String senha
+    ) {
+        Usuario aux = new Usuario();
+        aux.setEmail(Email.build(email));
+        aux.setPassword(Senha.build(senha));
+        return aux;
     }
 
     public static Usuario rebuild() {
@@ -110,6 +122,19 @@ public class Usuario {
 
     public void setEstandeId(EstandeId estandeId) {
         this.estandeId = estandeId;
+    }
+
+    public static Usuario login(
+            String email,
+            String senha
+    ) {
+
+        Usuario usuario = new Usuario();
+
+        usuario.email = Email.build(email);
+        usuario.senha = Senha.build(senha);
+
+        return usuario;
     }
 
     @Override

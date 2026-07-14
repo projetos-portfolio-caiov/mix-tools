@@ -2,7 +2,6 @@ package laudo.munition.system.infraestructure.jpa.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import laudo.munition.system.core.entity.estande.Estande;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,11 +29,11 @@ public class UsuarioJpa {
 
     @NotNull
     @Min(value = -1)
-    @Max(value = 2)
+    @Max(value = 3)
     private Integer cargo;
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "estande")
-    Estande estande;
+    @JoinColumn(name = "estande_id")
+    EstandeJpa estande;
 }

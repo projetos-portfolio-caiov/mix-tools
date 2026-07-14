@@ -1,4 +1,4 @@
-package laudo.munition.system.core.entity.generalValueObjects;
+package laudo.munition.system.core.entity.shared;
 
 public class Telefone {
 

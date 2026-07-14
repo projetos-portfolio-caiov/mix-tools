@@ -5,6 +5,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laudo.munition.system.application.port.TokenProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,11 +22,14 @@ public class AutenticacaoFilter extends OncePerRequestFilter {
     private static final Logger LOGGER = LoggerFactory.getLogger(AutenticacaoFilter.class);
 
     private final AutenticacaoService autenticarService;
-    private final GerenciadorTokenJwt jwtTokenManager;
+    private final TokenProvider tokenProvider;
 
-    public AutenticacaoFilter(AutenticacaoService autenticarService, GerenciadorTokenJwt jwtTokenManager) {
+    public AutenticacaoFilter(
+            AutenticacaoService autenticarService,
+            TokenProvider tokenProvider
+    ) {
         this.autenticarService = autenticarService;
-        this.jwtTokenManager = jwtTokenManager;
+        this.tokenProvider = tokenProvider;
     }
 
     @Override
@@ -41,7 +45,7 @@ public class AutenticacaoFilter extends OncePerRequestFilter {
             jwtToken = requestTokenHeader.substring(7);
 
             try {
-                username = jwtTokenManager.getUsernameFromToken(jwtToken);
+                username = tokenProvider.obterLogin(jwtToken);
             } catch (ExpiredJwtException exception) {
                 LOGGER.info("[FALHA AUTENTICACAO] - Token expirado, usuario: {} - {}",
                         exception.getClaims().getSubject(), exception.getMessage());
@@ -59,7 +63,7 @@ public class AutenticacaoFilter extends OncePerRequestFilter {
     private void addUsernameInContext(HttpServletRequest request, String username, String jwtToken) {
         UserDetails userDetails = autenticarService.loadUserByUsername(username);
 
-        if (jwtTokenManager.validateToken(jwtToken, userDetails)) {
+        if(tokenProvider.validar(jwtToken)){
 
             UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                     new UsernamePasswordAuthenticationToken(

@@ -1,5 +1,7 @@
 package laudo.munition.system.core.entity.laudo.valueObjects;
 
+import laudo.munition.system.core.exception.DadosMalFormatados;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.regex.Pattern;

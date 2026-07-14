@@ -1,5 +1,6 @@
 package laudo.munition.system.infraestructure.config.security;
 
+import laudo.munition.system.application.port.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,52 +38,41 @@ public class SecurityConfiguracao {
     private AutenticacaoEntryPoint autenticacaoJwtEntryPoint;
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(
+            HttpSecurity http,
+            AutenticacaoFilter autenticacaoFilter
+    ) throws Exception {
+
         http
                 .headers(headers -> headers
                         .frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .cors(Customizer.withDefaults())
                 .csrf(CsrfConfigurer<HttpSecurity>::disable)
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(HttpMethod.POST, "/usuarios/login").permitAll()
                         .requestMatchers(
-                                "/swagger-ui/**",
-                                "/swagger-ui.html",
-                                "/swagger-resources",
-                                "/swagger-resources/**",
                                 "/configuration/ui",
                                 "/configuration/security",
                                 "/api/public/**",
-                                "/api/public/authenticate",
                                 "/webjars/**",
                                 "/v3/api-docs/**",
-                                "/actuator/*",
-                                "/usuarios/login/**",
+                                "/actuator/**",
                                 "/h2-console/**",
-                                "/h2-console/**",
-                                "/error/**",
-                                "/telegram/auth-code",
-                                "/telegram/auth-password",
-                                "/telegram/auth-status"
+                                "/error/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
-                .exceptionHandling(handling -> handling
-                        .authenticationEntryPoint(autenticacaoJwtEntryPoint))
-                .sessionManagement(management -> management
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .exceptionHandling(handling ->
+                        handling.authenticationEntryPoint(autenticacaoJwtEntryPoint))
+                .sessionManagement(management ->
+                        management.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
-        http.addFilterBefore(jwtAuthenticationFilterBean(), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(
+                autenticacaoFilter,
+                UsernamePasswordAuthenticationFilter.class
+        );
 
         return http.build();
-    }
-
-    @Bean
-    public AuthenticationManager authManager(HttpSecurity http) throws Exception {
-        AuthenticationManagerBuilder authenticationManagerBuilder =
-                http.getSharedObject(AuthenticationManagerBuilder.class);
-        authenticationManagerBuilder.authenticationProvider(
-                new AutenticacaoProvider(autenticarService, passwordEncoder()));
-        return authenticationManagerBuilder.build();
     }
 
     @Bean
@@ -91,13 +81,39 @@ public class SecurityConfiguracao {
     }
 
     @Bean
-    public AutenticacaoFilter jwtAuthenticationFilterBean() {
-        return new AutenticacaoFilter(autenticarService, jwtAuthenticationUtilBean());
+    public AutenticacaoFilter jwtAuthenticationFilterBean(
+            TokenProvider tokenProvider,
+            AutenticacaoService autenticacaoService
+    ) {
+        return new AutenticacaoFilter(
+                autenticacaoService,
+                tokenProvider
+        );
     }
 
     @Bean
-    public GerenciadorTokenJwt jwtAuthenticationUtilBean() {
-        return new GerenciadorTokenJwt();
+    public AuthenticationManager authManager(
+            HttpSecurity http,
+            AutenticacaoProvider provider
+    ) throws Exception {
+
+        AuthenticationManagerBuilder builder =
+                http.getSharedObject(AuthenticationManagerBuilder.class);
+
+        builder.authenticationProvider(provider);
+
+        return builder.build();
+    }
+
+    @Bean
+    public AutenticacaoProvider autenticacaoProvider(
+            AutenticacaoService autenticacaoService,
+            PasswordEncoder passwordEncoder
+    ) {
+        return new AutenticacaoProvider(
+                autenticacaoService,
+                passwordEncoder
+        );
     }
 
     @Bean

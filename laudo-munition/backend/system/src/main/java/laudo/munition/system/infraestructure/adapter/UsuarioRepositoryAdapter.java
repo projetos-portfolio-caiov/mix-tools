@@ -1,5 +1,6 @@
 package laudo.munition.system.infraestructure.adapter;
 
+import laudo.munition.system.application.dto.usuario.UsuarioMapper;
 import laudo.munition.system.core.entity.usuario.Usuario;
 import laudo.munition.system.core.repository.usuario.UsuarioQueryRepository;
 import laudo.munition.system.infraestructure.jpa.repository.UsuarioJpaRepository;
@@ -19,7 +20,7 @@ public class UsuarioRepositoryAdapter implements UsuarioQueryRepository {
 
     @Override
     public Optional<Usuario> findByEmail(String email) {
-        return Optional.empty();
+        return Optional.of(UsuarioMapper.toUsuarioFromJpa(repository.findByEmail(email).get()));
     }
 
     @Override

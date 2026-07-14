@@ -1,21 +1,20 @@
-package laudo.munition.system.core.entity.laudo.valueObjects;
+package laudo.munition.system.core.entity.shared;
 
-import laudo.munition.system.core.entity.generalValueObjects.EstandeId;
 import laudo.munition.system.core.exception.DadosMalFormatados;
 
-public class UsuarioId {
+public class EnderecoId {
 
     private Integer value;
 
-    private UsuarioId(Integer value) {
+    private EnderecoId(Integer value) {
         this.value = value;
     }
 
-    public static UsuarioId build(Integer value) {
+    public static EnderecoId build(Integer value) {
         if (value == null || value <= 0) {
             throw new DadosMalFormatados("Id de Cliente inválido: %s mal formatado!".formatted(value));
         }
-        return new UsuarioId(value);
+        return new EnderecoId(value);
     }
 
     public Integer getValue() {
@@ -24,7 +23,7 @@ public class UsuarioId {
 
     @Override
     public String toString() {
-        return "UsuarioId{" +
+        return "EstandeId{" +
                 "value='" + value + '\'' +
                 '}';
     }

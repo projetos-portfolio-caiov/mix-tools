@@ -1,7 +1,5 @@
 package laudo.munition.system.core.entity.usuario.valueObjects;
 
-import laudo.munition.system.core.entity.generalValueObjects.Email;
-
 public class Senha {
 
     private String value;

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import laudo.munition.system.core.entity.estande.Estande;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,6 +38,5 @@ public class ClienteJpa {
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "estande")
-    Estande estande;
+    EnderecoJpa endereco;
 }

@@ -1,4 +1,4 @@
-package laudo.munition.system.core.entity.laudo.valueObjects;
+package laudo.munition.system.core.entity.fundamentacao.valueObjects;
 
 public class Finalidade {
 

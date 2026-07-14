@@ -3,9 +3,8 @@ package laudo.munition.system.infraestructure.jpa.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import laudo.munition.system.core.entity.cliente.Cliente;
-import laudo.munition.system.core.entity.usuario.Usuario;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +25,10 @@ public class EstandeJpa {
     public String nome;
 
     @NotBlank
+    @Size(min = 4, max = 45)
+    public String presidente;
+
+    @NotBlank
     @Email
     @Size(min = 8)
     public String email;
@@ -36,8 +39,9 @@ public class EstandeJpa {
     private String telefone;
 
     @OneToMany(mappedBy = "estande")
-    Set<Cliente> clientes;
+    Set<LaudoJpa> laudos;
 
-    @OneToMany(mappedBy = "estande")
-    Set<Usuario> usuarios;
+    @NotNull
+    @ManyToOne
+    EnderecoJpa endereco;
 }
