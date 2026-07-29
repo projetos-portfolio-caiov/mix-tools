@@ -1,0 +1,74 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.card {
+    width: 420px;
+    background: white;
+    border-radius: 14px;
+    padding: 32px;
+    border: 2px solid #ff4da6;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+}
+
+.titulo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+}
+
+.mensagem {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.botaoCancelar {
+    width: 140px;
+    height: 42px;
+    border-radius: 10px;
+    border: none;
+    background: #f3c2dc;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botaoCancelar:hover {
+    background: #e7a6cc;
+}
+
+
+.botaoConfirmar {
+    width: 140px;
+    height: 42px;
+    border-radius: 10px;
+    border: none;
+    background: #ff4da6;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.botaoConfirmar:hover {
+    background: #e63f95;
+}

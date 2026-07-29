@@ -1,0 +1,16 @@
+.graficoQtdp {
+  width: 100%;
+  min-height: 360px;         
+  background: #ffffff;
+  border: 0.3vh solid #ff69b4;
+  border-radius: 0.8rem;
+  padding: 16px;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .graficoQtdp {
+    min-height: 320px;
+    padding: 12px;
+  }
+}

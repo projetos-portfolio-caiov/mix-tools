@@ -1,0 +1,30 @@
+.tipoContainer {
+  background-color: #FFE4F2;
+  border-radius: 3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  height: 3vh;
+}
+
+.tipoItem {
+  background: transparent;
+  border: none;
+  padding: 0.8vh 5vh;
+  border-radius: 3vh;
+  font-size: 1.5vh;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #3a0a2b;
+}
+
+.active {
+  background-color: #FF5CB2;
+  color: white;
+  font-weight: bold;
+}
+
+.tipoItem:hover {
+  opacity: 0.85;
+}

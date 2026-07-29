@@ -1,0 +1,19 @@
+.areaUploadFotoProduto {
+  width: 75%;
+  height: 75%;
+  border: 2px solid #F6339A;
+  background-color: #FDF2F8;
+  border-radius: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgUploadProduto {
+  width: 60%;
+}
+
+.imgUploadProduto:hover {
+  cursor: pointer;
+}

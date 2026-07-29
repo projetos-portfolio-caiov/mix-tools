@@ -1,0 +1,66 @@
+.listagemFluxoContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Container da tabela */
+
+.cardClienteFluxo {
+  width: 100%;
+  height: 72vh;
+  background: white;
+  border-radius: 10px;
+  border: 2px solid #FF5CB2;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 2.5fr 1.5fr 0.6fr;
+  background: #FFE4F2;
+  padding: 12px 15px;
+  font-weight: bold;
+  border-bottom: 2px solid #FF5CB2;
+}
+
+/* Container das linhas */
+
+.linhas {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.botaoCarregar {
+  align-self: center;
+  padding: 0.65rem 2rem;
+  background-color: #4f46e5;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+}
+
+.botaoCarregar:hover:not(:disabled) {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+}
+
+.botaoCarregar:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+.botaoCarregar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

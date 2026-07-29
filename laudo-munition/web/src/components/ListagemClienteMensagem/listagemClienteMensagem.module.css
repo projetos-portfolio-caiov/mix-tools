@@ -1,0 +1,32 @@
+.selecionarTodosAbaixo {
+  width: 100%;
+  height: fit-content;
+  padding: 1vh;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+}
+
+/* .checkboxSelecionarTodosAbaixo {
+} */
+
+.estruturaRegistroListagem {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+}
+
+.listaStyle {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Mantido caso esteja sendo usado globalmente no projeto */
+/* .textoCampoFormulario {
+} */

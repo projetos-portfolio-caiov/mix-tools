@@ -1,0 +1,86 @@
+.formularioCard {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    border-radius: 1vh;
+    border: 2px solid #F6339A;
+}
+
+.formCardContent {
+    padding: 2%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.formCardHeader {
+    width: 100%;
+    height: 5%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.formElements {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.formElements input {
+    height: 5vh;
+    border: 2px solid #F6339A;
+    background-color: #FFE4F2;
+    border-radius: 1vh;
+    padding: 2%;
+    font-size: 0.8em;
+}
+
+.formElements textarea {
+    border: 2px solid #F6339A;
+    background-color: #FFE4F2;
+    border-radius: 1vh;
+    padding: 2%;
+    font-size: 1em;
+    resize: none;
+}
+
+.formElements select {
+    background-color: #F6339A;
+    border-radius: 1vh;
+    font-size: 1em;
+    padding: 0.5vh;
+    color: #FFFFFF;
+    text-align: center;
+    border: none;
+}
+
+.formCardFooter {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2%;
+}
+
+.formCardFooter button {
+    width: 50%;
+    height: 90%;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 1vh;
+    background-color: #F6339A;
+    color: #FFFFFF;
+}
+
+.formCardFooter .btnCancelarEnvioMensagem {
+    background-color: #FCCEE8;
+    color: #101828;
+}

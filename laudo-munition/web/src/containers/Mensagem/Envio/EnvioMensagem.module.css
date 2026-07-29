@@ -1,0 +1,63 @@
+.elements {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.formLadoA {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    /* justify-content: center; */
+}
+
+.imgFormEnvioMensagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+
+.imgFormEnvioMensagem .img {
+    width: 50%;
+    height: 90%;
+    background-color: #F6339A;
+    border-radius: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formLadoB {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.filtrosDiv {
+    display: flex;
+    gap: 2%;
+}
+
+.filtrosDiv select {
+    width: 50%;
+}
+
+.formDivisor {
+    width: 0.1%;
+    height: 100%;
+    border-left: 2px solid #D1D5DC;
+    margin: 0% 2%;
+}
+
+.customSelect {
+  max-height: 120px;
+  overflow-y: auto;
+}

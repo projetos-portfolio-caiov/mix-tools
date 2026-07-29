@@ -1,0 +1,115 @@
+.recorrenciaContainer {
+  background: white;
+  border: 0.3vh solid #ff69b4;
+  border-radius: 1rem;
+  padding: 2.5vh 2.5vw;
+  margin-top: 2vh;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 24vh;
+}
+
+.recorrenciaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.recorrenciaTituloGrupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4vh;
+}
+
+.recorrenciaTitle {
+  font-size: 2vh;
+  font-weight: 700;
+  color: #0d1225;
+  margin: 0;
+}
+
+.recorrenciaSubtitle {
+  font-size: 1.5vh;
+  color: #888;
+  margin: 0;
+}
+
+.recorrenciaTaxaGeral {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2vh;
+}
+
+.recorrenciaTaxaLabel {
+  font-size: 1.4vh;
+  color: #888;
+}
+
+.recorrenciaTaxaValor {
+  font-size: 3.5vh;
+  font-weight: 800;
+  color: #1ca700;
+  line-height: 1;
+}
+
+.recorrenciaCentro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  gap: 2vh;
+}
+
+.recorrenciaVariacaoGrande {
+  font-size: 6vh;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1;
+}
+
+.positivo {
+  color: #1ca700;
+}
+
+.negativo {
+  color: #d40000;
+}
+
+.recorrenciaComparacaoMeses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.blocoMes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vh;
+}
+
+.blocoMes span {
+  color: #888;
+  font-size: 1.5vh;
+}
+
+.blocoMes strong {
+  color: #0d1225;
+  font-size: 2.8vh;
+  font-weight: 800;
+}
+
+.vs {
+  width: 4.5vh;
+  height: 4.5vh;
+  border-radius: 50%;
+  background: #f2f2f2;
+  color: #0d1225;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

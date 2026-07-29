@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  min-height: 360px;
+  background: #ffffff;
+  padding: 16px;
+  overflow-x: hidden;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    min-height: 320px;
+    padding: 12px;
+  }
+}

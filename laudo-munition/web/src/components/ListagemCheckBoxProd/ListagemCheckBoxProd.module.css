@@ -1,0 +1,44 @@
+.selecionarTodosAbaixo {
+  width: 100%;
+  height: fit-content;
+  padding: 1vh;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+}
+
+/* .checkboxSelecionarTodosAbaixo {
+} */
+
+.estruturaRegistroListagem {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 2%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.estruturaRegistroListagem input {
+  width: 10%;
+  padding: 1%;
+}
+
+.estruturaRegistroListagem .inputPesquisaFluxo {
+  padding: 10%;
+}
+
+.listaStyle {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  height: 10vh;
+}
+
+
+
+/* Mantido caso esteja sendo usado globalmente no projeto */
+/* .textoCampoFormulario {
+} */

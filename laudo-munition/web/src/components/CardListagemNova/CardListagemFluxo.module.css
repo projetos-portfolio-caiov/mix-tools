@@ -1,0 +1,46 @@
+.conteudo {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 2.5fr 1.5fr 0.6fr;
+  padding: 15px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.conteudo:hover {
+  background: #fafafa;
+}
+
+/* Colunas */
+
+.coluna p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* Ações */
+
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+
+/* Botões */
+
+.botao {
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editar {
+  background: #4f46e5;
+}
+
+.excluir {
+  background: #ef4444;
+}

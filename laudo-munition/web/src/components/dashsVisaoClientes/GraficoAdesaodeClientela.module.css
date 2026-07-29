@@ -1,0 +1,8 @@
+.graficoLinhaClientela {
+  width: 100%;
+  min-height: 360px;         
+  padding: 16px;
+  border: 0.3vh solid #ff69b4;
+  border-radius: 0.8rem;
+  overflow-x: hidden;
+}

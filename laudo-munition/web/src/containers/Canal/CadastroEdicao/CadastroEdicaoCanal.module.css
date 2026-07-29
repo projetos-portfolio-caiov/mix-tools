@@ -1,0 +1,52 @@
+.elements {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.formLadoA {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    /* justify-content: center; */
+}
+
+.formLadoA input {
+    /* height: 1%; */
+    padding: 1%;
+    width: 50%;
+}
+
+.formLadoA textarea {
+    height: 30%;
+}
+
+.formLadoB {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap: 2%;
+}
+
+.formDivisor {
+    width: 0.1%;
+    height: 100%;
+    border-left: 2px solid #D1D5DC;
+    margin: 0% 2%;
+}
+
+.filtrosDiv {
+    display: flex;
+    gap: 2%;
+}
+
+.filtrosDiv select {
+    width: 50%;
+}

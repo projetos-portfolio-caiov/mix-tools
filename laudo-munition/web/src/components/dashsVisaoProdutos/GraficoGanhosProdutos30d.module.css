@@ -1,0 +1,9 @@
+.graficoLinhaFinanceiro {
+   width: 100%;
+  min-height: 360px;         
+  padding: 16px;
+  overflow-x: hidden;
+  border: 0.3vh solid #ff69b4;
+  border-radius: 0.75rem;
+  
+}

@@ -1,0 +1,275 @@
+.elements {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 1.2em;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formLadoA {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+    /* justify-content: center; */
+}
+
+.formLadoB {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap: 3%;
+}
+
+.formDivisor {
+    width: 0.1%;
+    height: 100%;
+    border-left: 2px solid #D1D5DC;
+    margin: 0% 2%;
+}
+
+.filtrosDiv {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    gap: 2%;
+}
+
+.filtrosDiv select {
+    width: 100%;
+}
+
+.listagemProdutosAtiva {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    overflow-y: auto;
+}
+
+.listagemProdutosDesativa {
+    width: 100%;
+    height: 100%;
+    display: hidden;
+    flex-direction: column;
+    gap: 2%;
+    overflow-y: auto;
+}
+
+.cardProduto {
+    width: 100%;
+    min-height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2%;
+    border: #FF5CB2 2px solid;
+    border-radius: 10px;
+}
+
+.botao {
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5vh;
+  height: 5vh;
+}
+
+.editar {
+  background: #4f46e5;
+}
+
+.excluir {
+  background: #ef4444;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.adicionar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    font-size: 2em;
+    font-weight: bold;
+    color: #FF5CB2;
+    border: 2px dashed #FF5CB2;
+    border-radius: 10px;
+}
+
+.adicionar:hover {
+    background-color: #FFE4F2;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* .cabecalhoProduto {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+} */
+
+.formatoFormulario {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.formatoFormularioDesativado {
+    display: none;
+    width: 100%;
+    height: 100%;
+    gap: 2%;
+}
+
+.canal {    
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.boxInput {
+  display: flex;
+  border: 2px solid #FF5CB2; 
+  border-radius: 8px;
+  background-color: #FFE4F2; 
+  font-size: 14px;
+  outline: none;
+  padding: 0 16px;
+  margin-bottom: 2%;
+  width: 30%;
+  height: 5%;
+  gap: 2%;
+}
+
+.boxInput .inputPesquisa {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.boxInput img {
+  width: 20px;
+}
+
+.pesquisaLista {
+  width: 50%;
+  padding: 3.5%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1em;
+  gap: 0%;
+}
+
+.campos {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8%;
+    margin-bottom: 2%;
+}
+
+.filtrosEntrada {
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.select {
+    width: 100%;
+    height: 100%;
+    background-color: #F6339A;
+    border-radius: 1vh;
+    font-size: 1em;
+    padding: 0.5vh;
+    color: #FFFFFF;
+    text-align: center;
+    border: none;
+}
+
+.modalAdicionar {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    border: #FF5CB2 2px solid;
+    border-radius: 10px;
+}
+
+.qtdAdicionar {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+
+.botaoAdicionar {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2%;
+}
+
+.botaoAdicionar button {
+    width: 50%;
+    height: 90%;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 1vh;
+    background-color: #F6339A;
+    color: #FFFFFF;
+}
+
+.botaoAdicionar .btnCancelarEnvioMensagem {
+    background-color: #FCCEE8;
+    color: #101828;
+}
+
+.valorVenda {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2%;
+}
+.erroCampo {
+    display: block;
+    min-height: 18px; /* reserva o espaço mesmo sem erro */
+    color: red;
+    font-size: 0.8rem;
+}

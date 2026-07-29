@@ -1,0 +1,74 @@
+.kpiContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5vh;
+  padding: 2vh;
+  border: 0.3vh solid #ff69b4;
+  border-radius: 3vh;
+  flex: 1;
+  min-width: 0;
+  height: 13vh;
+  background: white;
+  margin-top: 2vh;
+  box-sizing: border-box;
+}
+
+.kpiIcon {
+  background: #ffd7ef;
+  min-width: 6vh;
+  min-height: 6vh;
+  border-radius: 1.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vh;
+  color: #ff2fa3;
+  overflow: hidden;
+}
+
+.kpiIcon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.kpiInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 0.4vh;
+}
+
+.kpiTitle {
+  font-size: 1.7vh;
+  color: #4a4a4a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.kpiValue {
+  font-size: 2.8vh;
+  color: #0d1225;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.kpiVariation {
+  font-size: 1.5vh;
+  font-weight: 600;
+  margin: 0;
+}
+
+.positivo {
+  color: #1ca700;
+}
+
+.negativo {
+  color: #d40000;
+}
+
+.nenhum {
+  color: #2e2e2e;
+}

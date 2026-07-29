@@ -1,0 +1,32 @@
+.fluxoContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .conteudo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 2%;
+
+        .header {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            height: 10%;
+            align-items: center;
+        }
+
+        .fluxoContent {
+            width: 100%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center;
+            justify-content: center; */
+        }
+    }
+}

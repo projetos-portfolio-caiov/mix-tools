@@ -1,0 +1,382 @@
+﻿.paginaLogin {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ========================= LADO ESQUERDO ========================= */
+
+.ladoEsquerdo {
+  flex: 1;
+  background-color: #454B1B;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+  text-align: center;
+
+  gap: 1rem;
+}
+
+.iconeCupcake {
+  background-color: #454B1B;
+  border-radius: 10px;
+
+  width: 50vh;
+  height: 50vh;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.iconeCupcake img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.boasVindas {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.mensagem {
+  font-size: 1.5rem;
+  text-align: center;
+  max-width: 400px;
+}
+
+/* ========================= LADO DIREITO ========================= */
+
+.ladoDireito {
+  flex: 1;
+  padding: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* centraliza tudo horizontalmente */
+}
+
+.tituloLogin {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 470px;
+}
+
+.instrucao {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 470px;
+}
+
+/* ========================= FORMULÁRIO ========================= */
+
+.inputsLogin {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 470px;
+}
+
+.tituloCampos {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.boxInput {
+  display: flex;
+  align-items: center;
+
+  height: 44px;
+  margin-bottom: 8px;
+
+  border-radius: 8px;
+  background-color: #c8c8c8;
+
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.boxInput input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  min-width: 0; /* evita overflow em flex */
+}
+
+.iconeEmail,
+.iconeCadeado {
+  width: 20px;
+  flex-shrink: 0;
+  color: #454B1B
+}
+
+.imgOlho {
+  width: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.regrasSenha {
+  margin-top: -4px;
+  margin-bottom: 12px;
+}
+
+.linhaCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.inputCheckbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #454B1B;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.linkEsqueci {
+  font-size: 14px;
+  color: #454B1B;
+  text-decoration: none;
+  margin-bottom: 20px;
+  align-self: flex-end;
+  margin-top: 8px;
+}
+
+.botaoEntrar {
+  background-color: #454B1B;
+  color: white;
+
+  width: 100%;
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 25px;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+.botaoEntrar:hover {
+  background-color: #1E2939;
+}
+
+.criarConta {
+  margin-top: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.criarConta a {
+  color: #454B1B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.erro {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin: 2px 0;
+}
+
+.ok {
+  color: #52c41a;
+  font-size: 13px;
+  margin: 2px 0;
+}
+
+/* ========================= NOTEBOOKS (≤1366px) ========================= */
+
+@media (max-width: 1366px) {
+
+  .ladoDireito {
+    padding: 40px;
+  }
+
+  .tituloLogin {
+    font-size: 26px;
+  }
+
+  .boasVindas {
+    font-size: 34px;
+  }
+
+  .mensagem {
+    max-width: 350px;
+  }
+
+  .inputsLogin,
+  .tituloLogin,
+  .instrucao {
+    max-width: 420px;
+  }
+}
+
+/* ========================= TABLETS (≤900px) ========================= */
+
+@media (max-width: 900px) {
+
+  .paginaLogin {
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .ladoEsquerdo {
+    width: 100%;
+    min-height: 280px;
+    padding: 40px 24px;
+  }
+
+  .ladoDireito {
+    width: 100%;
+    padding: 40px 24px;
+    align-items: center;
+  }
+
+  .inputsLogin,
+  .tituloLogin,
+  .instrucao {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .tituloLogin,
+  .instrucao {
+    text-align: center;
+  }
+
+  .boasVindas {
+    font-size: 32px;
+  }
+
+  .mensagem {
+    max-width: 100%;
+  }
+}
+
+/* ========================= MOBILE (≤600px) ========================= */
+
+@media (max-width: 600px) {
+
+  .ladoEsquerdo {
+    padding: 32px 18px;
+    min-height: 240px;
+  }
+
+  .ladoDireito {
+    padding: 32px 18px;
+  }
+
+  .iconeCupcake {
+    width: 100px;
+    height: 100px;
+  }
+
+  .boasVindas {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .mensagem {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .tituloLogin {
+    font-size: 24px;
+  }
+
+  .instrucao {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .inputsLogin,
+  .tituloLogin,
+  .instrucao {
+    max-width: 100%;
+  }
+
+  .boxInput {
+    height: 48px;
+    padding: 0 14px;
+  }
+
+  .boxInput input {
+    font-size: 14px;
+  }
+
+  .botaoEntrar {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .criarConta {
+    font-size: 13px;
+  }
+
+  .linkEsqueci {
+    font-size: 13px;
+  }
+}
+
+/* ========================= CELULARES PEQUENOS (≤380px) ========================= */
+
+@media (max-width: 380px) {
+
+  .ladoEsquerdo,
+  .ladoDireito {
+    padding: 24px 14px;
+  }
+
+  .boasVindas {
+    font-size: 24px;
+  }
+
+  .tituloLogin {
+    font-size: 22px;
+  }
+
+  .mensagem,
+  .instrucao {
+    font-size: 13px;
+  }
+
+  .boxInput {
+    height: 45px;
+    padding: 0 12px;
+  }
+}

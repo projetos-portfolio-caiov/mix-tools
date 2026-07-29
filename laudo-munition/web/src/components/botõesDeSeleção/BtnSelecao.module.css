@@ -1,0 +1,49 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.containerGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.button {
+    padding: 11px;
+    border-radius: 8px;
+    border: 1.5px solid #ffb6d9;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: border 0.2s, color 0.2s;
+}
+
+.active {
+    border: 2px solid #ff5cb2;
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff5cb2;
+    display: none;
+    flex-shrink: 0;
+}
+
+.active .dot {
+    display: block;
+}

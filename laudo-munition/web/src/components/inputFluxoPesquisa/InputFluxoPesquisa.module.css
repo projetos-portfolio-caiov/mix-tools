@@ -1,0 +1,53 @@
+.boxInput {
+  display: flex;
+  border: 2px solid #FF5CB2; 
+  border-radius: 8px;
+  background-color: #FFE4F2; 
+  font-size: 14px;
+  outline: none;
+  padding: 0 16px;
+  margin-bottom: 2%;
+  flex: 1;
+  height: 45px;
+  gap: 2%;
+}
+
+.boxInput .inputPesquisa {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.boxInput img {
+  width: 20px;
+}
+
+
+/* Variação de pesquisa lista */
+
+.pesquisaLista {
+  width: 100%;
+  padding: 3.5%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1em;
+  gap: 0%;
+}
+
+.slt {
+  flex: 1;
+  height: 45px;
+  border: 2px solid #FF5CB2;
+  border-radius: 8px;
+  background: #FFE4F2;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.cabecalhoInput {
+  display: flex;
+  width: 60%;
+  gap: 12px;
+}
